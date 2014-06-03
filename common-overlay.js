@@ -129,14 +129,14 @@
         }
     };
     //default plugin invoke
-    $('.overlay-init').on('click', function() {
+    /*$('.overlay-init').on('click', function() {
         var $this = $(this);
         $this.overlay({
             callback: function() {
 
             }/*,
              inline: "#some-id",
-             ajax: 'ajax.txt'*/
-        });
+             ajax: 'ajax.txt'
+        });*/
     });
 }(window, document, jQuery));
