@@ -29,24 +29,48 @@ There are 2 ways by which Overlay can be invoked
 There are multiple actions that can be performed using the callback function once the overlay is done loading, apart from that few other options are listed below.
 
 
-//below are some of the overlay options that can be configured directly
-//overlay is invoked for all the tags with class overlay-init and data attribute mentioned against it.
+  //below are some of the overlay options that can be configured directly
+  //overlay is invoked for all the tags with class overlay-init and data attribute mentioned against it.
+<code>
+$('.overlay-init').on('click', function() {
 
- debug: false, //enable debugging mode, default is false
- closeBtn: '.close', //mention the class or id that needs to be used for closing the overlay, default setting
- outerWrapper: '.outer-overlay', //
- innerWrapper: '.inner-overlay',
- loadingClass: '.loading', // used for customizing the loading icon
- loadingText: 'loading...',//text can be configured or directly loading img path can be given
- closeonEscape: true, // mention if closing using esc key is required, default is true
- colors: {
- closeButton: "#fff", //close icon color, can be overridden from CSS or can be configured using options as well
- background: "#222", //modal window background color
- loading: "#fff", //loading icon color
- opacity: '0.7' //modal window opacity
- },
- callback: function() { //callback function once modal is loaded
- },
- //overlay can be invoked by any of the following methods or by data-ajax/data-inline in html
- inline: "#some-id", //if using inline, mention the div id or any tag you like
- ajax: "file-url" //if using ajax, mention the url, default method is ajax
+        var $this = $(this);
+        
+        $this.overlay({
+        
+          debug: false, //enable debugging mode, default is false
+  
+          closeBtn: '.close', //mention the class or id that needs to be used for closing the overlay, default setting
+          
+          outerWrapper: '.outer-overlay', 
+          
+          innerWrapper: '.inner-overlay',
+          
+          loadingClass: '.loading', // used for customizing the loading icon
+          
+          loadingText: 'loading...',//text can be configured or directly loading img path can be given
+          
+          closeonEscape: true, // mention if closing using esc key is required, default is true
+          
+          colors: {
+            closeButton: "#fff", //close icon color, can be overridden from CSS or can be configured using options as well
+            
+            background: "#222", //modal window background color
+            
+            loading: "#fff", //loading icon color
+            
+            opacity: '0.7' //modal window opacity
+            
+          },
+          
+          callback: function() { //callback function once modal is loaded
+         
+          },
+         //overlay can be invoked by any of the following methods or by data-ajax/data-inline in html
+          inline: "#some-id", //if using inline, mention the div id or any tag you like
+         ajax: "file-url" //if using ajax, mention the url, default method is ajax
+        
+        });
+    });
+  
+ </code>
