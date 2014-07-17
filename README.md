@@ -1,4 +1,4 @@
-Common_Overlay
+Overlay-Modal-Window
 ==============
 
 Plugin for overlay - lightweight
@@ -12,9 +12,7 @@ There are lot of jquery modal/overlay plugins out there, but this comes as 2Kb m
 So go ahead and enjoy.
 
 
-/*-----------------------------------------------
- Get Started
- *----------------------------------------------*/
+Get Started
 
 a) Download "Production Version" folder and unzip to your repository, which contains the minified JS and CSS file required to created the modal.
 
