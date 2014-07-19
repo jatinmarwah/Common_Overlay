@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8' />
+        <!--Include the Modal Style Sheets-->
+        <link href="CSS/common-overlay.css" rel="stylesheet" type="text/css"/>
+        
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+        <title>Overlay-Modal-Window</title>
+        <style>
+            body{
+                font-family: 'Josefin Sans', sans-serif;
+                background: whitesmoke;
+            }
+            .outer{
+                width: 960px;
+                margin: 0 auto;
+            }
+            li{
+                list-style-type: none;
+            }
+            p{
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- MAIN CONTENT -->
+        <div class="outer">
+            <header>
+                <h1>Overlay-modal-window</h1>
+                <p>Lightweight Plugin for creating Overlay Window</p>
+            </header>
+
+            <div id="banner">
+                <span id="logo"></span>
+
+                <a href="https://github.com/jatinmarwah/Overlay-Modal-Window" class="button fork"><strong>View On GitHub</strong></a>
+                <div class="downloads">
+                    <span>Downloads:</span>
+                    <ul>
+                        <li><a href="https://github.com/jatinmarwah/Overlay-Modal-Window/zipball/master" class="button">ZIP</a></li>
+                        <li><a href="https://github.com/jatinmarwah/Overlay-Modal-Window/tarball/master" class="button">TAR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <section class="inner">
+                Below is a demonstration to invoke the plugin, and specify whether you want it to refer inline content or via ajax.
+                <ul class="slides">
+                    <li>
+                        <p>
+                            <a data-inline="#video-container" class="overlay-init" href="javascript:void(0);">This is a inline content</a>
+                            --> Click me to refer to a inline content in a page, it can be hidden or visible(as you wish)
+                        </p>
+
+                    </li>
+                    <li>
+                        <p>
+                            <a data-ajax="ajax.txt" class="overlay-init" href="javascript:void(0);">Ajax content</a>
+                            --> For Ajax content remember to put a wrapper container around it to avoid content flow issues.
+                        </p>
+                    </li>
+                </ul>
+
+                <code>And simply invoke the code as 
+                    <p>
+                        $('.overlay-init').on('click', function() {
+                        var $this = $(this);
+
+                        $this.overlay();
+
+                        });
+                    </p>
+                    <p>or with some options as 
+                        
+                    <ol>debug: false,</ol>
+                            <ol>closeBtn: '.close',</ol>
+                            <ol>outerWrapper: '.outer-overlay',</ol>
+                            <ol>innerWrapper: '.inner-overlay',</ol>
+                            <ol>loadingClass: '.loading',</ol>
+                            <ol>loadingText: 'loading...',</ol>
+                            <ol>closeonEscape: true,</ol>
+                            <ol>colors: {</ol>
+                            <ol>closeButton: "#fff",</ol>
+                            <ol>background: "#222",</ol>
+                            <ol>loading: "#fff",</ol>
+                            <ol>opacity: '0.7'</ol>
+                            <ol>},</ol>
+                            <ol>callback: function() {</ol>
+                            <ol>},</ol>
+                            //overlay can also be invoked by any of the following methods or by data-ajax/data-inline in html
+                            <ol>inline: "#some-id", //if using inline, mention the div id or any tag you like</ol>
+                            <ol>ajax: "file-url" //if using ajax, mention the url, default method is ajax</ol>
+                        
+
+                    </p>
+
+                </code>
+                <div id='video-container' class="inline-content">
+                    <h3>Watch Videos inside..</h3>
+                    <iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/6jl7WRU-_vQ?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+                    <p>What goes around comes around, comes around.</p>
+                </div>
+
+            </section>
+
+            <footer>
+                <br />
+                Maintained by: <a href="https://github.com/jatinmarwah">Jatin Marwah</a>
+            </footer>
+        </div>
+        <!--Include Jquery(any version)-->
+        <script src="JS/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <!--Include Overlay Plugin-->
+        <script src="JS/common-overlay.js" type="text/javascript"></script>
+        
+        <script>
+
+            //initialize overlay content on all the links with class "overlay-init"
+            $('.overlay-init').on('click', function() {
+                var $this = $(this);
+
+                $this.overlay();
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,13 +1,15 @@
+
 /*
-@author: Jatin Marwah
-@license: Public
-@Created Date: 03 June 2014
-*/
+ * @author: Jatin Marwah (https://github.com/jatinmarwah)
+ * @License: The MIT License (MIT)
+ * @Release Date: 19 July 2014
+ */
+
 ;
 (function(window, document, $, undefined) {
     "use strict";
     //common variables
-    var h = $("html"),
+    var h = $("body"),
             d = $(document);
     //plugin initialization
     $.fn.overlay = function(options) {
@@ -16,6 +18,7 @@
                 option = options || {},
                 opts = $.extend({}, $.fn.overlay.defaults, option),
                 methods = {
+                    _options: opts,
                     _init: function() {
                         //check method type
                         opts.ajax = opts.ajax || ($(mainscope).data('ajax') || false);
@@ -25,9 +28,10 @@
                         //close modal
                         methods._closeonEscape();
                         methods._close();
+                        
                     },
                     _debug: function(param) {
-                        if (opts.debug && typeof console != 'undefined')
+                        if (opts.debug && typeof console !== 'undefined')
                             console.log(param);
                     },
                     _open: function() {
@@ -121,12 +125,13 @@
         closeonEscape: true,
         colors: {
             closeButton: "#fff",
-            background: "#222",
+            background: "none",
             loading: "#fff",
             opacity: '0.7'
         },
         callback: function() {
         }
+       
     };
     //default plugin invoke
     /*$('.overlay-init').on('click', function() {
@@ -134,9 +139,8 @@
         $this.overlay({
             callback: function() {
 
-            }/*,
-             inline: "#some-id",
-             ajax: 'ajax.txt'
-        });*/
-    });
+            },
+             inline: "#some-id"
+        });
+    });*/
 }(window, document, jQuery));

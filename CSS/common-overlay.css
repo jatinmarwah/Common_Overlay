@@ -1,0 +1,77 @@
+/*Common styles do not modify starts*/
+
+
+.overlay {
+    background-color: #000000;
+    height: 100%;
+    left: 0;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99998;
+}
+
+.outer-overlay .close {
+    color: #fff;
+    cursor: pointer;
+    font-size: 21px;
+    height: 28px;
+    margin: 39px 46px 0 0;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+    z-index: 10000;
+}
+
+
+.modal{
+    overflow: auto;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-radius: 5px;
+    left: 0;
+    margin-top: 0px;
+    max-width: 1280px !important;
+    outline: 0 none !important;
+    padding: 20px 0 30px 95px;
+    position: fixed;
+    text-align: left;
+    top: 0;
+    transform: translateZ(0px);
+    width: 93%;
+    height: 90%;
+    z-index: 99999;
+    color: #fff;
+    
+}   
+
+
+.inline-content{
+    display: none;
+    visibility: hidden;
+}
+
+/*Common styles do not modify ends*/
+
+/*Custom Styles Starts*/
+
+.modal #video-container{
+    display: block;
+    visibility: visible;
+
+}
+
+.modal #video-container iframe{
+    height: 400px;
+    width: 80%;
+}
+.modal .ajax-wrapper{
+    width: 70%;
+    margin: 20px;
+    font-size: 24px;
+}
+/*Custom Styles Ends*/
