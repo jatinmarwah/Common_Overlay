@@ -74,7 +74,7 @@ The content in the overlay can be inserted by 2 ways:
     While using inline option remember to use ID as the option and not the class, in order to make sure that the target inline content is loaded and not all.
     
     using data attribute 
-    <a data-inline="#some-id" class="overlay-init" href="javascript:void(0);">Ajax content</a>
+    <a data-inline="#some-id" class="overlay-init" href="javascript:void(0);">Inline content</a>
                             
     using options
     
