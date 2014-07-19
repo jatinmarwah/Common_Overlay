@@ -42,33 +42,83 @@
         <h1>
 <a name="overlay-modal-window" class="anchor" href="#overlay-modal-window"><span class="octicon octicon-link"></span></a>Overlay-Modal-Window</h1>
 
-<p>Plugin for overlay - lightweight</p>
+<p>Lightweight Plugin for creating Overlay Window</p>
 
-<p>Plugin for invoking modal window, it is lightweight and works cross browser. Has very minimal but useful features for those who like to invoke content via ajax or inline and need only few features.</p>
+<p>This plugin is used to create Overlay or Modal window by clicking on any hyperlink within a page.</p>
 
-<p>Uses NO image, jquery dependent and inspired from <a href="http://fancybox.net/">http://fancybox.net/</a>, though not all features were required hence recreated it.</p>
+<p>It is lightweight and works cross browser, this plugin contains very minimal but useful features, solves the purpose of displaying external or inline content within a inbuilt popup like window, modify content CSS as you like and ready to go as per your requirements.</p>
 
-<p>There are lot of jquery modal/overlay plugins out there, but this comes as 2Kb minified JS file.</p>
+<p>Uses NO images at all, jquery dependent and inspired from <a href="http://fancybox.net/">http://fancybox.net/</a>, though not all features were required hence recreated it with code written from scratch.</p>
 
-<p>So go ahead and enjoy.</p>
+<p>There are lot of jquery modal/overlay plugins out there, but this comes as 2.4Kb minified JS file, and is not restricted towards any HTML structure.</p>
 
-<p>Get Started</p>
+<p>So go ahead and enjoy and do Star this project if you like it.</p>
 
-<hr><p>a) Download "Production Version" folder and unzip to your repository, which contains the minified JS and CSS file required to created the modal.</p>
+<hr><p>Get Started</p>
 
-<p>b) Include Jquery (jquery-1.11.1.min.js), Overlay JS File (common-overlay.min.js) from JS Folder and common-overlay.min.css from CSS Folder</p>
+<hr><p>a) Download folder and unzip to your repository, non compressed files are contained in folder CSS and JS.</p>
+
+<p>b) In order to run this plugin you need to include</p>
+
+<pre><code>a) Jquery - JS/jquery-1.11.1.min.js used here but you can download any version you like from jquery.com
+
+b) Overlay Plugin - JS/common-overlay.js used to invoke the modal window
+
+c) Overly CSS - CSS/common-overlay.css used to style the modal window, contains common styles required
+</code></pre>
 
 <p>c) Refer to index.html for sample implementation options.</p>
 
-<p>There are 2 ways by which Overlay can be invoked</p>
+<hr><p>Few steps to remember:</p>
 
-<p>1) Ajax - you can load external content to your overlay window.
-2) Inline - if content needs to be referred from within the page then this method is useful.</p>
+<hr><p>Plugin can be initialized using the following syntax</p>
 
-<p>There are multiple actions that can be performed using the callback function once the overlay is done loading, apart from that few other options are listed below.</p>
+<p>$('.your-class-name').on("click", function(){</p>
 
-<p>//below are some of the overlay options that can be configured directly
-  //overlay is invoked for all the tags with class overlay-init and data attribute mentioned against it.</p>
+<pre><code>  $(this).overlay()
+</code></pre>
+
+<p>});</p>
+
+<p>Preferred class name here is 'overlay-init' in order to keep consistency.</p>
+
+<p>The content in the overlay can be inserted by 2 ways:</p>
+
+<p>1) Ajax - you can load external content to your overlay window.</p>
+
+<pre><code>using data attribute 
+&lt;a data-ajax="ajax.txt" class="overlay-init" href="javascript:void(0);"&gt;Ajax content&lt;/a&gt;
+
+using options
+
+$('.your-class-name').on("click", function(){
+
+  $(this).overlay({
+    ajax: "file-url"
+  });
+
+});
+</code></pre>
+
+<p>2) Inline - if content needs to be referred from within the page then this method is useful.</p>
+
+<pre><code>While using inline option remember to use ID as the option and not the class, in order to make sure that the target inline content is loaded and not all.
+
+using data attribute 
+&lt;a data-inline="#some-id" class="overlay-init" href="javascript:void(0);"&gt;Ajax content&lt;/a&gt;
+
+using options
+
+$('.your-class-name').on("click", function(){
+
+  $(this).overlay({
+    inline: "#some-id"
+  });
+
+});
+</code></pre>
+
+<p>Below are some of the options available within the plugin, so that YOU have the flexibility.</p>
 
 <p>$('.overlay-init').on('click', function() {
         var $this = $(this);</p>
